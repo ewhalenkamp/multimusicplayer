@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 
+var API_KEY = 'AIzaSyDRCowMZEclghjZK8eHen_SzeC0MMGi4z0';
+
 function App() {
   return (
     <div className="App">
