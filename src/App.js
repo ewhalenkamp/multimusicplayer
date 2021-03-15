@@ -8,7 +8,12 @@ import youtubeApi from './apis/youtube.js'
 
 export default class App extends React.Component {
 
-  state = {videos: []};
+  state = {videos: [], queue: []};
+
+  addQueue = video => {
+    this.state.queue.push(video);
+    console.log(video);
+  }
 
   onSearch = async keyword => {
     const response = await youtubeApi.get("./search", {
@@ -26,7 +31,7 @@ export default class App extends React.Component {
 
   compileResults = () => {
     const searchresults = [];
-    this.state.videos.forEach((vid) => {searchresults.push(<VideoResult video={vid}/>);})
+    this.state.videos.forEach((vid) => {searchresults.push(<VideoResult video={vid} addQueue={this.addQueue}/>);})
     console.log(searchresults)
     return searchresults;
   }
