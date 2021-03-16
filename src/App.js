@@ -29,18 +29,20 @@ export default class App extends React.Component {
     this.setState({videos});
   }
 
-  compileResults = () => {
+  compileResults = (videos) => {
     const searchresults = [];
-    this.state.videos.forEach((vid) => {searchresults.push(<VideoResult video={vid} addQueue={this.addQueue}/>);})
-    console.log(searchresults)
+    videos.forEach((vid) => {searchresults.push(<VideoResult video={vid} addQueue={this.addQueue}/>);})
+    console.log(videos);
     return searchresults;
   }
 
   render() {
       return (
       <div className="App">
-        <Search onSearch={this.onSearch}/>
-        {this.compileResults()}
+        <div className="videoresultouter">
+          <Search onSearch={this.onSearch}/>
+          {this.compileResults(this.state.videos)}
+        </div>
       </div>
       );
     }

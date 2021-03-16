@@ -9,19 +9,20 @@ class Search extends React.Component {
     }
 
     onChange = event => {
+        event.preventDefault();
         const title = event.target.value;
         this.setState({title});
-        console.log(this.state.title);
     }
 
     render(){
         return (
-            <div>
+            <div className="searchbar">
                 <form onSubmit={this.onSubmit}>
                     <div class="form">
                         <input onChange={this.onChange} type="text" placeholder="Search Music on Youtube"/>
                     </div>
                 </form>
+                <button onClick={this.onSubmit}>Search</button>
             </div>
         );
     }
