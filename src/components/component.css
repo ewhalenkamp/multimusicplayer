@@ -1,7 +1,56 @@
+.searchBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:  translate(-50%,50%);
+    background: #2f3640;
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+
+}
+
+.open .searchInput {
+    width: 240px;
+    padding: 0 6px;
+}
+
+.searchYTButton, .searchSpotifyButton {
+    background: white;
+    color : #2f3640;
+}
+
+.searchButton {
+    color: white;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #2f3640;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.searchInput {
+    border:none;
+    background: none;
+    outline:none;
+    float:left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+
+}
+
 .videoresult {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;   
     border-radius:20px;
-    width:85%;
+    width:90%;
     height:5%;
     margin:15px auto;
     padding-left: .5%;
@@ -33,28 +82,4 @@
 
   .author-queuebutton p {
    margin-left:10%;
-    }
-
-    .searchbar {
-        display: flex;
-        width:100%;
-        align-items:left;
-    }
-
-    .searchbar .form {
-        margin-left:5%;
-        align-items:left;
-    }
-
-    .searchbar input{
-        
-        width:150%;
-        height:35px;
-        text-align:center;
-        font-size:14pt;
-        
-    }
-
-    .searchbar button {
-        margin-left:200px;
     }
