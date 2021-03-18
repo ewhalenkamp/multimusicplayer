@@ -1,13 +1,13 @@
+
 .searchBox {
     position: absolute;
-    top: 50%;
+    top: 5%;
     left: 50%;
     transform:  translate(-50%,50%);
     background: #2f3640;
     height: 40px;
     border-radius: 40px;
     padding: 10px;
-
 }
 
 .open .searchInput {
@@ -15,12 +15,11 @@
     padding: 0 6px;
 }
 
-.searchYTButton, .searchSpotifyButton {
-    background: white;
-    color : #2f3640;
+.open .searchBox {
+    width: 300px;
 }
 
-.searchButton {
+.searchButton, .searchYTButton, .searchSpotifyButton {
     color: white;
     float: right;
     width: 40px;
@@ -31,6 +30,11 @@
     justify-content: center;
     align-items: center;
     transition: 0.4s;
+}
+
+.searchYTButton, .searchSpotifyButton {
+    background: white;
+    color : #2f3640;
 }
 
 .searchInput {

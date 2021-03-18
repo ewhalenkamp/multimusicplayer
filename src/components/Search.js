@@ -34,10 +34,18 @@ class Search extends React.Component {
         };
     }
 
+    //focusOn and focusOff controllers handle the css transition class for the search bar
+
     focusOn = () => {
-        console.log(this.state.focus);
         document.getElementsByClassName("searchInput")[0].classList.add("open");
+        document.getElementsByClassName("searchBox")[0].classList.add("open");
         this.setState({focus: true});
+    }
+
+    focusOff = () => {
+        document.getElementsByClassName("searchInput")[0].classList.remove("open");
+        document.getElementsByClassName("searchBox")[0].classList.remove("open");
+        this.setState({focus: false});
     }
 
     onSubmit = destination => event => {
@@ -54,12 +62,8 @@ class Search extends React.Component {
         this.setState({title});
     }
 
-    onFocus = event => {
-        this.setState({focus: true});
-    }
-
     onBlur = event => {
-        this.setState({focus: false});
+        this.focusOff();
     }
 
     render() {
@@ -70,15 +74,12 @@ class Search extends React.Component {
         else
             buttons = <SearchButton focusOn={this.focusOn}/>;
         return (
-            
         <div className="searchBox">
 
-            <input className="searchInput" onChange={this.onChange} onFocus={this.onFocus} onBlur={this.onBlur} type="text" name="" placeholder="Search"/>
+            <input className="searchInput" onChange={this.onChange} onBlur={this.onBlur} type="text" name="" placeholder="Search"/>
             
             {buttons}
 
-
-            
         </div>
         );
     }

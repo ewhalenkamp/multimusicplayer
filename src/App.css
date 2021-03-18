@@ -41,7 +41,7 @@
   float: left;
   border: 1px solid #ccc;
   background-color: #f1f1f1;
-  width: 25%;
+  width: 10%;
   height: 300px;
 }
 
@@ -77,14 +77,6 @@
   width: 70%;
   border-left: none;
   height: 300px;
-}
-
-
-.youtubesubsection {
-  background-image:url('https://wallpapercave.com/wp/wp5952036.jpg');
-  width:25%;
-  padding:15px;
-  height:auto;
 }
 
 

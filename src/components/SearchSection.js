@@ -35,7 +35,7 @@ export default class SearchSection extends React.Component {
         return(
         <div id="youtubesubsection" className="tabcontent">
             <Search onYTSearch={this.onYTSearch} onSpotifySearch={this.onSpotifySearch}/>
-            <VideoResultList videos={this.state.videos} addQueue={this.addQueue}/>
+            {/* <VideoResultList videos={this.state.videos} addQueue={this.addQueue}/> */}
         </div>
       );
     }
