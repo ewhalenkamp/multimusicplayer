@@ -32,3 +32,18 @@
 #### Wireframe (Based on User Stories)
 
 ![App Wireframe](wireframe.png)
+
+#### Components List (Based on Wireframe)
+
+(* = Requires Internal State)
+- Derived From App
+    - Search Field*
+    - Play/Pause Button
+    - Skip Song Button
+    - Search Results
+    - Queue
+    - Now Playing
+- Extra Components
+    - VideoTile
+    - VideoResult
+    
