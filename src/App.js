@@ -8,18 +8,8 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentTab: -1,
       queue: [],
-      data: [
-        { id: "1", name: "Youtube" , component: <SearchSection/>},
-        { id: "2", name: "Spotify"  , component: <SpotifySection/>},
-      ]
     };
-  this.handleClick = this.handleClick.bind(this);
-  }
-  
-  handleClick(currentTab) {
-    this.setState({ currentTab });
   }
 
   addQueue = video => {
@@ -28,24 +18,10 @@ export default class App extends React.Component {
     
   render() {
     return (
-
-<>
-  <div className="tab">
-  {this.state.data.map((button, i) => (
-    <button key={button.name} className="tablinks" onClick={() => this.handleClick(i)}>{button.name}</button>
-  ))
-  }
-  </div>
-
-  <div className="tabcontent">
-    {this.state.currentTab !== -1 &&
-      <React.Fragment>
-        {this.state.data[this.state.currentTab].component}
-      </React.Fragment>
-    }
-  </div>
-</>
-  )
+      <div className="search-wrapper">
+        <SearchSection/>
+      </div>
+    );
   }
 }
 
