@@ -1,7 +1,8 @@
 import React from 'react';
+import youtubeApi from '../apis/youtube.js'
+import './component.css';
 
 function SearchButton(props) {
-    console.log(props);
     return (
         <button className="searchButton" id="search" onClick={props.focusOn}>
             <i className="ri-search-line"/>
@@ -34,6 +35,24 @@ class Search extends React.Component {
         };
     }
 
+    onYTSearch = async keyword => {
+        const response = await youtubeApi.get("./search", {
+          params: {
+            part: 'snippet',
+            q: keyword,
+            type: 'video',
+            maxResults: 50,
+          }
+        });
+        
+        this.props.addQueue(response.data.items[0]);
+
+        
+        // const videos = [];
+        // response.data.items.forEach((item) => {videos.push(item);})
+        // this.setState({videos});
+      }
+
     //focusOn and focusOff controllers handle the css transition class for the search bar
 
     focusOn = () => {
@@ -48,12 +67,11 @@ class Search extends React.Component {
         this.setState({focus: false});
     }
 
-    onSubmit = destination => event => {
+    onSubmit = event => {
         event.preventDefault();
-        if (destination === "youtube")
-            this.props.onYTSearch(this.state.title);
-        else
-            this.props.onSpotifySearch(this.state.title);
+        console.log("hey");
+        this.onYTSearch(this.state.title);
+        
     }
 
     onChange = event => {
@@ -70,7 +88,7 @@ class Search extends React.Component {
         const focus = this.state.focus;
         let buttons;
         if (focus)
-            buttons = [<YoutubeButton/>,<SpotifyButton/>];
+            buttons = [<YoutubeButton onYTSearch={this.onSubmit} key={1}/>,<SpotifyButton key={2}/>];
         else
             buttons = <SearchButton focusOn={this.focusOn}/>;
         return (
