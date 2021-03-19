@@ -11,11 +11,14 @@ import YouTube from 'react-youtube';
 
     render() {
       const opts = {
-        height: '500',
-        width: '500',
+        height: '135',
+        width: '250',
       };
   
-      return <YouTube videoId={this.props.videoId} opts={opts} onReady={this._onReady} />;
+      return (
+      <div className="mediaplayer">
+        <YouTube className="player" videoId={this.props.videoId} opts={opts} onReady={this._onReady} />
+      </div>);
     }
   
     

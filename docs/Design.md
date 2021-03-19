@@ -15,6 +15,8 @@
             - ~~ Search Bar~~
             - Play/Pause Button
             - Skip Button
+- Reminders
+    - Convert MediaPlayer into a functional component
 
 #### Sprint 2
 

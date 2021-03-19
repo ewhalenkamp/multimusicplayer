@@ -1,19 +1,24 @@
 import Search from './Search.js';
-
 import React from 'react';
+import VideoResult from './VideoResult.js';
 
 
-export default class SearchSection extends React.Component {
-
-  onSpotifySearch = () => {
-    return;
-  }
-
-    render() {
-        return(
-        <div id="youtubesubsection" className="tabcontent">
-            {/* <VideoResultList videos={this.state.videos} addQueue={this.addQueue}/> */}
-        </div>
-      );
+export default function SearchSection(props) {
+  const searchResults = props.searchResults;
+  const addQueue = props.addQueue;
+  
+  //compiles multiple VideoResult components into an array to be displayed within render()
+  const compileResults = () => {
+      const searchresults = searchResults.map((vid, index) => <VideoResult className={"column"+((index%2).toString())} video={vid} addQueue={addQueue}/>);
+      return searchresults;
     }
+
+  return(
+      
+      <div className="searchSection">
+          {compileResults()}
+          
+      </div>
+  );
+  
 }

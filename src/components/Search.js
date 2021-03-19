@@ -45,7 +45,7 @@ class Search extends React.Component {
           }
         });
         
-        this.props.addQueue(response.data.items[0]);
+        this.props.updateSearchResults(response.data.items);
 
         
         // const videos = [];
