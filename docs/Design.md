@@ -10,11 +10,11 @@
     - ~~Basic loading of media~~
         - ~~Find the right package for the job~~
     - ~~Ability to play/pause media without built-in controls~~
-    - Create basic user interface to display queue, search results, etc
-        - CSS Styling of central control element
+    - ~~Create basic user interface to display queue, search results, etc~~
+        - ~~CSS Styling of central control element~~
             - ~~ Search Bar~~
-            - Play/Pause Button
-            - Skip Button
+            - ~~Play/Pause Button~~
+            - ~~Skip Button~~
 - Reminders
     - Convert MediaPlayer into a functional component
 
