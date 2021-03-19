@@ -81,7 +81,7 @@ class Search extends React.Component {
     }
 
     onBlur = event => {
-        this.focusOff();
+        setTimeout(this.focusOff,250);
     }
 
     render() {
