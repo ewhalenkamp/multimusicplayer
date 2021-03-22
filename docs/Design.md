@@ -12,7 +12,7 @@
     - ~~Ability to play/pause media without built-in controls~~
     - ~~Create basic user interface to display queue, search results, etc~~
         - ~~CSS Styling of central control element~~
-            - ~~ Search Bar~~
+            - ~~Search Bar~~
             - ~~Play/Pause Button~~
             - ~~Skip Button~~
 - Reminders
