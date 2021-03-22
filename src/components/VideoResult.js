@@ -19,7 +19,9 @@ export default function VideoResult(props) {
     }
     
     const returnButton = () => {
-        if (props.onRemove)
+        console.log(props.removeQueue);
+        console.log(props.addQueue);
+        if (props.isQueue)
             return <button onClick={removeQueue}>Remove from Queue</button>
         else
             return <button onClick={addQueue}>Add to Queue</button>

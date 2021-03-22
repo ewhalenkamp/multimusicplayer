@@ -216,3 +216,7 @@ i {
     float:left;
 }
 
+.queuesectionwrapper {
+    justify-content:bottom;
+}
+

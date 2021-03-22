@@ -54,7 +54,10 @@ export default class App extends React.Component {
 
   removeFromQueue = (video) => {
     const queue = this.state.queue;
-    queue.remove(video);
+    const index = queue.indexOf(video);
+    if (index > -1) {
+      queue.splice(index, 1);
+    }
     this.setState({queue});
   }
 
@@ -71,7 +74,7 @@ export default class App extends React.Component {
         <Search updateSearchResults={this.updateSearchResults}/>
         <PlayButton onPlayPause = {this.onPlayPause} pause={this.state.pause}/>
         <SkipButton onSkip = {this.onSkip}/>
-        <QueueSection queue={this.state.queue} onRemove={this.removeFromQueue}/>
+        <QueueSection queue={this.state.queue} removeQueue={this.removeFromQueue}/>
       </>
     );
   }
