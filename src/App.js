@@ -14,7 +14,7 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       queue: [],
-      pause: true,
+      pause: false,
       player: ReactYT.Player,
       searchResults: [],
     };
@@ -49,7 +49,13 @@ export default class App extends React.Component {
   onSkip = () => {
     const queue = this.state.queue;
     queue.shift();
-    this.setState({queue: queue});
+    this.setState({queue});
+  }
+
+  removeFromQueue = (video) => {
+    const queue = this.state.queue;
+    queue.remove(video);
+    this.setState({queue});
   }
 
   render() {
@@ -65,7 +71,7 @@ export default class App extends React.Component {
         <Search updateSearchResults={this.updateSearchResults}/>
         <PlayButton onPlayPause = {this.onPlayPause} pause={this.state.pause}/>
         <SkipButton onSkip = {this.onSkip}/>
-        <QueueSection queue={this.state.queue}/>
+        <QueueSection queue={this.state.queue} onRemove={this.removeFromQueue}/>
       </>
     );
   }

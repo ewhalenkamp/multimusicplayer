@@ -18,10 +18,11 @@
 - Reminders
     - Convert MediaPlayer into a functional component
 
-#### Sprint 2
+#### Sprint 2 (3/21/21)
 
 - Goals
     - Proplerly queue and unqueue songs with the click of a button
-        - Requires VideoTile component with a delete button if in queue, add button if out of queue, etc
+        - ~~Requires VideoTile component with a delete button if in queue, add button if out of queue, etc~~
+    - Complete a rough CSS outline from which you can expand upon in
         
 

@@ -2,28 +2,40 @@ import React from 'react';
 import './component.css';
 
 export default function VideoResult(props) {
-
-    console.log(props);
     
     const video = props.video;
     const title = video.snippet.title;
     const channelTitle = video.snippet.channelTitle;
     const thumbnail = video.snippet.thumbnails.high;
-    
 
-    const buttonClick = (event) => {
+    const addQueue = (event) => {
         event.preventDefault();
-        this.props.addQueue(this.video);
+        props.addQueue(video);
+    }
+
+    const removeQueue = (event) => {
+        event.preventDefault();
+        props.removeQueue(video);
     }
     
+    const returnButton = () => {
+        if (props.onRemove)
+            return <button onClick={removeQueue}>Remove from Queue</button>
+        else
+            return <button onClick={addQueue}>Add to Queue</button>
+    }
+
     return(
-        <>
+        <div className="videotile">
             <img src={thumbnail.url} alt={title}></img>
-            <p><b>{title}</b></p>
-            <div className="author-queuebutton">
+            
+            <div className="videoinfo">
+                
+                <p ><b>{title}</b></p>
                 <p>{channelTitle} </p>
-                <button onClick={buttonClick}>Add to Queue</button>
+                {returnButton()}
+                
             </div>
-        </>
+        </div>
     );
 }

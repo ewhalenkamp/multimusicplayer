@@ -70,6 +70,7 @@
     position:absolute;
     left:5%;
     top:5%;
+    overflow-y: auto;
   }
 
   .videoresult img {
@@ -172,3 +173,46 @@ i {
 .ri-play-fill .ri-pause-fill {
     font-size:40px;
 }
+
+.videotile {
+    position: relative;
+    width:100%;
+    height:150px;
+    border: 5px solid black;
+    margin: 10px;
+    padding: 10px;
+    text-align:left
+}
+
+.videotile>img {
+    position: relative;
+    margin:5px;
+    width:40%;
+    height:80%;
+    float:left;
+}
+
+.videotile>button {
+    position: absolute;
+    border-radius:5px;
+    right:5%
+}
+
+.left-column, .right-column {
+    width:44%;
+    float:left;
+}
+
+.right-column {
+    position: absolute;
+    left: 50%;
+}
+
+.videoinfo {
+    overflow-wrap: break-word;
+    left:50%;
+    width:50%;
+    text-align:left;
+    float:left;
+}
+
